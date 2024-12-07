@@ -17,6 +17,14 @@ impl YUVBuffer {
         }
     }
 
+    pub fn with_yuv(width: usize, height: usize, yuv: &[u8]) -> Self {
+        Self {
+            yuv: yuv.to_vec(),
+            width,
+            height,
+        }
+    }
+
     /// Allocates a new YUV buffer with the given width and height and data.
     ///
     /// Data `rgb` is assumed to be `[rgb rgb rgb ...]`, starting at `y = 0`, continuing downwards, in other words
